@@ -1,17 +1,17 @@
 // Auteur : Ahmed Boukra Bettayeb
 // Version : 2.0
 // Date : 14/10/2025
-// Classe TriangleQuelconque - Déclaration
+// Classe TriangleQuelconque - Declaration
 
 #pragma once
 
 class TriangleQuelconque {
 private:
-    double a, b, c; // côtés
+    double a, b, c; // cï¿½tï¿½s
     static int compteur;
     static int decrementer;
 
-    // Vérifie si les longueurs forment un triangle valide
+    // Vï¿½rifie si les longueurs forment un triangle valide
     bool estValide(double A, double B, double C) const;
 
     //methode d'incrementation et decrementation
@@ -19,16 +19,16 @@ private:
     static void decrementerCompteur();
 
 public:
-    // Constructeur avec 3 côtés
+    // Constructeur avec 3 cï¿½tï¿½s
     TriangleQuelconque(double A, double B, double C);
 
-    // Constructeur avec 2 côtés + 1 angle (en degrés)
+    // Constructeur avec 2 cï¿½tï¿½s + 1 angle (en degrï¿½s)
     TriangleQuelconque(double A, double B, double angleDegres, bool fromAngle);
 
     //destructeur 
     ~TriangleQuelconque();
 
-    // Méthodes
+    // Mï¿½thodes
     double getPerimetre() const;
     double getSurface() const;
 
