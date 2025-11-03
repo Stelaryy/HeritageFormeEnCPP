@@ -1,7 +1,7 @@
 // Auteur : Ahmed Boukra Bettayeb
 // Version : 2.0
 // Date : 14/10/2025
-// Classe Ellipse - Déclaration
+// Classe Ellipse - Declaration
 
 #pragma once
 
@@ -23,7 +23,7 @@ public:
     double getA() const;
     double getB() const;
 
-    // Méthodes
+    // Mï¿½thodes
     double getSurface() const;
     double getPerimetre() const; 
 
