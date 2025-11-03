@@ -1,8 +1,7 @@
 // Auteur : Ahmed Boukra Bettayeb
 // Version : 2.0
 // Date : 14/10/2025
-// Classe Carre - Déclaration
-#include "stdafx.h"
+// Classe Carre - Dï¿½claration
 #pragma once
 
 
@@ -21,7 +20,7 @@ public:
     Carre(double cote);
     ~Carre();
 
-    // Méthodes
+    // Mï¿½thodes
     double perimetre() const;
     double surface() const;
     void setCote();  
