@@ -1,7 +1,7 @@
 // Auteur : Ahmed Boukra Bettayeb
 // Version : 2.0
 // Date : 14/10/2025
-// Classe Cercle - D�claration
+// Classe Cercle - Declaration
 #pragma once
 
 class Cercle {
