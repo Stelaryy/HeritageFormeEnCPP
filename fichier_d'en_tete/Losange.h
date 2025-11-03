@@ -1,7 +1,7 @@
 // Auteur : Ahmed Boukra Bettayeb
 // Version : 2.0
 // Date : 14/10/2025
-// Classe Losange - Déclaration
+// Classe Losange - Declaration
 
 #pragma once
 
@@ -20,10 +20,10 @@ private:
 public:
     // Constructeurs
     Losange(bool fromDiagonales); // saisie par diagonales
-    Losange();                    // saisie par côté + angle
+    Losange();                    // saisie par cï¿½tï¿½ + angle
     ~Losange();
 
-    // Méthodes
+    // Mï¿½thodes
     double perimetre() const;
     double surfaceParDiagonales() const;
     double surfaceParCoteEtAngle() const;
