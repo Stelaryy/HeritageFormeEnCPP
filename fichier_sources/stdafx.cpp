@@ -1,8 +1,8 @@
-// stdafx.cpp : fichier source incluant simplement les fichiers Include standard
-// Rectangle-Heritage-Forme.pch représente l'en-tête précompilé
-// stdafx.obj contient les informations de type précompilées
+// stdafx.cppï¿½: fichier source incluant simplement les fichiers Include standard
+// Rectangle-Heritage-Forme.pch represente l'en-tete precompilï¿½
+// stdafx.obj contient les informations de type prï¿½compilï¿½es
 
 #include "stdafx.h"
 
-// TODO: faites référence aux en-têtes supplémentaires nécessaires dans STDAFX.H
+// TODO: faites rï¿½fï¿½rence aux en-tï¿½tes supplï¿½mentaires nï¿½cessaires dans STDAFX.H
 // absents de ce fichier
