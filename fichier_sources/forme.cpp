@@ -1,6 +1,10 @@
 #include "stdafx.h"
 #include "forme.h"
 
+forme::forme(){
+    
+}
+
 double forme::getSurface(){
     return 0.0;
 }
