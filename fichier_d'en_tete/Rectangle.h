@@ -24,8 +24,8 @@ private:
     void SaisirLargeur();
 
 protected:
-    void setLongueur(double long);
-    void setLargeur(double large);
+    void setLongueur(double Long);
+    void setLargeur(double Large);
     void CalculerSurface();
     void CalculerPerimetre();
 

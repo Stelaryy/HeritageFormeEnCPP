@@ -20,14 +20,14 @@ Rectangle::~Rectangle()
 	cout << "Suppression de la memoire d un objet Rectangle ..." << endl;
 }
 
-double Rectangle::setLongueur(double Long)
+void Rectangle::setLongueur(double Long)
 {
 	this->Longueur = Long;
 	this->CalculerSurface();
 	this->CalculerPerimetre();
 }
 
-double Rectangle::setLargeur(double Large)
+void Rectangle::setLargeur(double Large)
 {
 	this->Largeur = Large;
 	this->CalculerSurface();
@@ -64,13 +64,13 @@ void Rectangle::SaisirLargeur()
 	this->CalculerPerimetre();
 }
 
-void Rectangle::SaisirDimensions()
+void Rectangle::SaisirDimension()
 {
 	this->SaisirLongueur();
 	this->SaisirLargeur();
 }
 
-void Rectangle::SaisirDimensions(double _dim1, double _dim2)
+void Rectangle::SaisirDimension(double _dim1, double _dim2)
 {
 	this->setLongueur(_dim1);
 	this->setLargeur(_dim2);
@@ -83,12 +83,12 @@ void Rectangle::CalculerPerimetre()
 
 void Rectangle::CalculerSurface()
 {
-	this->Surface = this->Longueur * this->Largeur;
+	this->surface = this->Longueur * this->Largeur;
 }
 
 double Rectangle::getSurface()
 {
-	return(this->Surface);
+	return(this->surface);
 }
 
 double Rectangle::getPerimetre()
