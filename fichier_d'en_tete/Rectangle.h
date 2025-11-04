@@ -3,6 +3,9 @@
 // Date : 14/10/2025
 // Classe Rectangle - Declaration
 
+#ifndef DEF_RECTANGLE
+#define DEF_RECTANGLE
+
 #pragma once
 #include <iostream>
 using namespace std;
@@ -14,6 +17,17 @@ private:
     static int decrementer;
     double Longueur;
     double Largeur;
+    double surface, Perimetre;
+
+    void SaisirLongueur();
+    void SaisirLargeur();
+
+protected:
+    void setLongueur(double long);
+    void setLargeur(double large);
+    void CalculerSurface();
+    void CalculerPerimetre();
+
 
 public:
     Rectangle(double Long, double Large);
@@ -33,3 +47,5 @@ public:
     static void decrementerCompteur();
 
 };
+
+#endif
