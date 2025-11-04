@@ -2,14 +2,14 @@
 //	Version : 1.1
 //	Date 13/09/2016
 //	Objet : TP Programmation Objet BTS SN
-//			Implementation d une classe Forme, et des classes d�rivees de cette classe (Rectangle, carre, cercle, triangle, hexagone etc...
+//			Implementation d une classe Forme, et des classes derivees de cette classe (Rectangle, carre, cercle, triangle, hexagone etc...
 //			Calcul de surface et de perimetre
 
-// main�: d�finit le point d'entr�e pour l'application console.
+// main�: definit le point d'entree pour l'application console.
 //
 
-#include "stdafx.h"
-#include "Forme.h"
+//#include "stdafx.h"
+#include "forme.h"
 #include "Rectangle.h"
 #include "Carre.h"
 using namespace std;

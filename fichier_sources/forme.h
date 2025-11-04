@@ -1,10 +1,13 @@
-#pragma
+#pragma once
 //	Auteur : Boukra Bettayeb Ahmed
 //	Version : 1.0
 //	Date 03/11/2025
 //	Objet : Definition des methodes de la classe abstraite Forme 
 //			Calcul de Perimetre et de surface
 //			Instanciation statique des objets (pas de pointeurs)
+
+#ifndef FORME_H
+#define FORME_H
 
 class forme
 {
@@ -18,3 +21,4 @@ class forme
     virtual void SaisirDimension(double _dim1, double _dim2, double _dim3);
 
 };
+#endif

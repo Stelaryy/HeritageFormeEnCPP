@@ -5,7 +5,7 @@
 //			Calcul de Perimetre et de surface
 //			Instanciation statique des objets (pas de pointeurs)
 
-#include "stdafx.h"
+//#include "stdafx.h"
 #include "Rectangle.h"
 using namespace std;
 

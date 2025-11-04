@@ -3,7 +3,7 @@
 // Date : 04/11/2025
 // Classe Carre - Implementation
 
-#include "stdafx.h"
+//#include "stdafx.h"
 #include "Carre.h"
 #include <iostream>
 using namespace std;
