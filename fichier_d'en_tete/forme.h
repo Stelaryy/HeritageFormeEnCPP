@@ -10,8 +10,8 @@ class forme
 {
     public:
     forme();
-    virtual double getsurface()=0;
-    virtual double getperimetre()=0;
+    virtual double getSurface()=0;
+    virtual double getPerimetre()=0;
     virtual void SaisirDimension();
     virtual void SaisirDimension(double _dim1);
     virtual void SaisirDimension(double _dim1, double _dim2);
