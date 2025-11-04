@@ -8,9 +8,10 @@
 
 #pragma once
 #include <iostream>
+#include "forme.h"
 using namespace std;
 
-class Rectangle
+class Rectangle : public forme
 {
 private:
     static int compteur;
@@ -30,17 +31,13 @@ protected:
 
 
 public:
-    Rectangle(double Long, double Large);
+    Rectangle(double Long = 1, double Large = 1);
     ~Rectangle();
 
-    void setLargeur();
-    double getLargeur() const;
-
-    void setLongueur();
-    double getLongueur() const;
-
-    double calculPerimetre() const;
-    double calculSurface() const;
+    void SaisirDimension() override;
+    void SaisirDimension(double _dim1, double _dim2) override;
+    double getSurface() override;
+    double getPerimetre() override;
 
     static int getCompteurRectangle();
     static void incrementerCompteur();
