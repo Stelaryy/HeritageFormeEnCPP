@@ -1,11 +1,11 @@
 #include "stdafx.h"
 #include "forme.h"
 
-forme::getsurface(){
+double forme::getSurface(){
     return 0.0;
 }
 
-forme::getperimetre(){
+double forme::getPerimetre(){
     return 0.0;
 }
 
