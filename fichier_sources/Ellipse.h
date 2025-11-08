@@ -1,37 +1,42 @@
 // Auteur : Ahmed Boukra Bettayeb
 // Version : 2.0
 // Date : 14/10/2025
-// Classe Ellipse - Declaration
+// Classe Ellipse - Déclaration
+
+#ifndef ELLIPSE_H
+#define ELLIPSE_H
 
 #pragma once
+#include <iostream>
+#include <cmath>
+#include "forme.h"
 
-class Ellipse {
+class Ellipse : public forme {
 private:
-    static int compteur;
-    static int decrementer;
-    double a; // semi-grand axe
-    double b; // semi-petit axe
-    static void incrementerCompteur();
-    static void decrementerCompteur();
+    double GrandAxe; 
+    double PetitAxe; 
+    double Surface;
+    double Perimetre;
 
+    void SaisirGrandAxe();
+    void SaisirPetitAxe();
+
+protected:
+    void setGrandAxe(double GrandAxe);
+    void setPetitAxe(double PetitAxe);
+    void CalculerSurface();
+    void CalculerPerimetre();
+    
 public:
     // Constructeur
-    Ellipse(double A, double B);
+    Ellipse(double GrandAxe = 0, double PetitAxe = 0);
     ~Ellipse();
 
-    // Getters
-    double getA() const;
-    double getB() const;
-
-    // M�thodes
-    double getSurface() const;
-    double getPerimetre() const; 
-
-    static int getCompteurellispe();
-    
+    void SaisirDimension() override;
+    void SaisirDimension(double GrandAxe, double PetitAxe) override;
+    double getSurface() override;
+    double getPerimetre() override;
 
 };
 
-
-
-
+#endif

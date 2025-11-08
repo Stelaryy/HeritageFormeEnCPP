@@ -19,6 +19,7 @@ class forme
     virtual void SaisirDimension(double _dim1);
     virtual void SaisirDimension(double _dim1, double _dim2);
     virtual void SaisirDimension(double _dim1, double _dim2, double _dim3);
+    virtual void SaisirDimension(double GrandAxe, double PetitAxe);
 
 };
 #endif
