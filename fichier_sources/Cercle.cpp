@@ -1,7 +1,7 @@
 ﻿// Auteur : Ahmed Boukra Bettayeb
-// Version : 2.0
-// Date : 14/10/2025
-// Classe Cercle
+// Version : 3.0
+// Date : 08/11/2025
+// Classe Cercle - Implémentation
 
 #include "stdafx.h"
 #include "Cercle.h"
@@ -13,53 +13,33 @@ using namespace std;
 // Définition portable de PI
 constexpr double PI = 3.14159265358979323846;
 
-int Cercle::compteur = 0;
-int Cercle::decrementer = 0;
-
-int Cercle::getCompteurCercle() {
-    return compteur;
+// Constructeurs
+Cercle::Cercle() : Ellipse(0, 0), rayon(0) {
+    cout << "Création d'un cercle par défaut (rayon = 0)" << endl;
 }
 
-void Cercle::incrementerCompteur() {
-    compteur++;
+Cercle::Cercle(double r) : Ellipse(r, r), rayon(r) {
+    if (r <= 0)
+        throw invalid_argument("Le rayon doit être positif.");
+    cout << "Création d'un objet de type Cercle, rayon = " << rayon << endl;
 }
 
-void Cercle::decrementerCompteur() {
-    decrementer--;
-}
-
-// Constructeur
-Cercle::Cercle(double r) {
-    incrementerCompteur();
-    if (r > 0) {
-        this->rayon = r;
-    }
-    else {
-        throw invalid_argument("Le rayon doit etre positif.");
-    }
-
-    cout << "Creation d'un objet de type Cercle. " << endl;
-    cout << "De rayon : " << this->rayon << endl;
-    cout << "nombre de Cercle en memoir : " << compteur << endl;
-}
-//desctruteur
-Cercle::~Cercle(){
-    decrementerCompteur();
-    cout << "destruction d'un objet de type Cercle." << endl;
-    cout << "Nombre de Cercle restant apres destruction : " << compteur << endl;
+// Destructeur
+Cercle::~Cercle() {
+    cout << "Destruction d'un objet de type Cercle (rayon = " << rayon << ")" << endl;
 }
 
 // Getter
 double Cercle::getRayon() const {
-    return this->rayon;
+    return rayon;
 }
 
 // Surface : πr²
 double Cercle::getSurface() const {
-    return PI * this->rayon * this->rayon;
+    return PI * rayon * rayon;
 }
 
 // Périmètre : 2πr
 double Cercle::getPerimetre() const {
-    return 2 * PI * this->rayon;
+    return 2 * PI * rayon;
 }

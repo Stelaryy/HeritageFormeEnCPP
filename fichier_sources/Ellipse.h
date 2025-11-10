@@ -3,7 +3,7 @@
 // Date : 14/10/2025
 // Classe Ellipse - Déclaration
 
-#ifndef ELLIPSE_H
+#ifndef ELLIPSE_H 
 #define ELLIPSE_H
 
 #pragma once
@@ -34,8 +34,8 @@ public:
 
     void SaisirDimension() override;
     void SaisirDimension(double GrandAxe, double PetitAxe) override;
-    double getSurface() override;
-    double getPerimetre() override;
+    double getSurface() const override;
+    double getPerimetre() const override;
 
 };
 

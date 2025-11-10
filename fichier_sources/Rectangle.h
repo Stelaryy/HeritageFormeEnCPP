@@ -36,8 +36,8 @@ public:
 
     void SaisirDimension() override;
     void SaisirDimension(double _dim1, double _dim2) override;
-    double getSurface() override;
-    double getPerimetre() override;
+    double getSurface() const override;
+    double getPerimetre() const override;
 
     static int getCompteurRectangle();
     static void incrementerCompteur();

@@ -1,15 +1,14 @@
 #include "stdafx.h"
 #include "forme.h"
-
 forme::forme(){
     
 }
 
-double forme::getSurface(){
+double forme::getSurface() const{
     return 0.0;
 }
 
-double forme::getPerimetre(){
+double forme::getPerimetre() const  {
     return 0.0;
 }
 

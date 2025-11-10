@@ -1,70 +1,92 @@
 ﻿// Auteur : Ahmed Boukra Bettayeb
-// Version : 3.0
-// Date : 5/11/2025
+// Version : 3.2
+// Date : 08/11/2025
 // Classe Ellipse - Implémentation
 
-#include "stdafx.h"
-#include "Ellipse.h"
+#include "ellipse.h"
 #include <iostream>
 #include <stdexcept>
 #include <cmath>
 using namespace std;
 
-// Définition portable de PI
 constexpr double PI = 3.14159265358979323846;
 
-int Ellipse::compteur = 0;
-int Ellipse::decrementer = 0;
-
-int Ellipse::getCompteurellispe() {
-    return compteur;
-}
-
-void Ellipse::incrementerCompteur() {
-    compteur++;
-}
-
-void Ellipse::decrementerCompteur() {
-    decrementer--;
-}
-
+// -----------------------------
 // Constructeur
-Ellipse::Ellipse(double A, double B) {
-    incrementerCompteur();
-    if (A > 0 && B > 0) {
-        this->a = A;
-        this->b = B;
-    }
-    else {
-        throw invalid_argument("Les axes doivent etre positifs.");
-    }
+// -----------------------------
+Ellipse::Ellipse(double A, double B)
+    : GrandAxe(A), PetitAxe(B)
+{
+    if (A <= 0 || B <= 0)
+        throw invalid_argument("Les axes doivent être positifs.");
 
-    cout << "Creation d'un objet de type Ellipse. " << endl;
-    cout << " Axe a : " << this->a << endl;
-    cout << " Axe b : " << this->b << endl;
-    cout << "Nombre de Ellipse en memoire " << endl;
+    CalculerSurface();
+    CalculerPerimetre();
+
+    cout << "Création d'une ellipse : "
+         << "GrandAxe = " << GrandAxe
+         << ", PetitAxe = " << PetitAxe << endl;
 }
-//destructeur 
+
+// -----------------------------
+// Destructeur
+// -----------------------------
 Ellipse::~Ellipse() {
-    decrementerCompteur();
-    cout << "destruction d un objet de type Ellipse :" << endl;
-    cout << "Nombre de Ellipse en memoire : " << compteur << endl;
-}
-// Getters
-double Ellipse::getA() const {
-    return this->a;
+    cout << "Destruction d'une ellipse." << endl;
 }
 
-double Ellipse::getB() const {
-    return this->b;
+// -----------------------------
+// Méthodes protégées
+// -----------------------------
+void Ellipse::setGrandAxe(double A) {
+    if (A <= 0)
+        throw invalid_argument("Le grand axe doit être positif.");
+    GrandAxe = A;
 }
 
-// Surface : πab
+void Ellipse::setPetitAxe(double B) {
+    if (B <= 0)
+        throw invalid_argument("Le petit axe doit être positif.");
+    PetitAxe = B;
+}
+
+void Ellipse::CalculerSurface() {
+    Surface = PI * GrandAxe * PetitAxe;
+}
+
+void Ellipse::CalculerPerimetre() {
+    // Formule approchée de Ramanujan
+    Perimetre = PI * (3 * (GrandAxe + PetitAxe) -
+                      sqrt((3 * GrandAxe + PetitAxe) * (GrandAxe + 3 * PetitAxe)));
+}
+
+// -----------------------------
+// Méthodes publiques
+// -----------------------------
+void Ellipse::SaisirDimension() {
+    cout << "Entrez le grand axe : ";
+    cin >> GrandAxe;
+    cout << "Entrez le petit axe : ";
+    cin >> PetitAxe;
+
+    if (GrandAxe <= 0 || PetitAxe <= 0)
+        throw invalid_argument("Les axes doivent être positifs.");
+
+    CalculerSurface();
+    CalculerPerimetre();
+}
+
+void Ellipse::SaisirDimension(double A, double B) {
+    setGrandAxe(A);
+    setPetitAxe(B);
+    CalculerSurface();
+    CalculerPerimetre();
+}
+
 double Ellipse::getSurface() const {
-    return PI * this->a * this->b;
+    return Surface;
 }
 
-// Périmètre 
 double Ellipse::getPerimetre() const {
-    return PI * (3 * (this->a + this->b) - sqrt((3 * this->a + this->b) * (this->a + 3 * this->b)));
+    return Perimetre;
 }

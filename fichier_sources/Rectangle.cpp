@@ -86,12 +86,12 @@ void Rectangle::CalculerSurface()
 	this->surface = this->Longueur * this->Largeur;
 }
 
-double Rectangle::getSurface()
+double Rectangle::getSurface() const
 {
 	return(this->surface);
 }
 
-double Rectangle::getPerimetre()
+double Rectangle::getPerimetre() const
 {
 	return(this->Perimetre);
 }
