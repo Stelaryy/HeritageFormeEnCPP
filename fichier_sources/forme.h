@@ -3,7 +3,7 @@
 class forme {
 public:
     virtual ~forme() = default;
-    forme() = default; 
+    forme();
 
     virtual double getSurface() const = 0;
     virtual double getPerimetre() const = 0;

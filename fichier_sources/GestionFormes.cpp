@@ -10,10 +10,10 @@ int main()
 {
     int Touche = 0;
 
-    Rectangle MonRectangle(0.0, 0.0);
-    Carre MonCarre(0.0);
-    Ellipse MonEllipse(0.0, 0.0);
-    Cercle MonCercle(0.0);
+    Rectangle MonRectangle(1.0, 1.0);
+    Carre MonCarre(1.0);
+    Ellipse MonEllipse(1.0, 1.0);
+    Cercle MonCercle(1.0);
 
     cout << "------------------------- Instanciation du Rectangle --------------------------" << endl;
     MonRectangle.SaisirDimension();
@@ -25,7 +25,7 @@ int main()
     cout << "Surface: " << MonCarre.getSurface() << endl;
     cout << "Perimetre: " << MonCarre.getPerimetre() << endl << endl;
 
-    cout << "------------------------- Instanciation de l’Ellipse --------------------------" << endl;
+    cout << "------------------------- Instanciation de l Ellipse --------------------------" << endl;
     double grandAxe, petitAxe;
     cout << "Entrez le grand axe : ";
     cin >> grandAxe;
