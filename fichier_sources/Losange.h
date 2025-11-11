@@ -1,42 +1,41 @@
 // Auteur : Ahmed Boukra Bettayeb
-// Version : 2.0
+// Version : 2.1
 // Date : 14/10/2025
-// Classe Losange - Declaration
+// Classe Losange - Déclaration
 
 #pragma once
+#include "forme.h"
+#include <stdexcept>
 
-class Losange {
+class Losange : public forme {
 private:
-    static int compteur;
-    static int decrementer;
-    double d1;
-    double d2;
-    double cote;
-    double angle; // en radians
-    static void incrementerCompteur();
-    static void decrementerCompteur();
-    
+    double d1 = 0.0;
+    double d2 = 0.0;
+    double cote = 0.0;
+    double angle = 0.0;
+    double surface = 0.0;
+    double perimetre = 0.0;
+
+    void SaisirDiagonal1();
+    void SaisirDiagonal2();
+    void SaisirCote();
+    void SaisirAngle();
+
+protected:
+    void setDiagonal1(double d);
+    void setDiagonal2(double d);
+    void setCote(double c);
+    void setAngle(double a);
 
 public:
     // Constructeurs
-    Losange(bool fromDiagonales); // saisie par diagonales
-    Losange();                    // saisie par c�t� + angle
+    Losange();                                // par défaut
+    Losange(bool fromDiagonales);      // true → diagonales, false → côté + angle
     ~Losange();
 
-    // M�thodes
-    double perimetre() const;
-    double surfaceParDiagonales() const;
-    double surfaceParCoteEtAngle() const;
-
-    // Getters
-    double getCote() const;
-    double getD1() const;
-    double getD2() const;
-    double getAngleDeg() const;
-
-    static int getCompteur();
-    
+    // Méthodes
+    void SaisirDimension(double _dim1) override;
+    void SaisirDimension(double _dim1, double _dim2) override;
+    double getSurface() const override;
+    double getPerimetre() const override;
 };
-
-
-

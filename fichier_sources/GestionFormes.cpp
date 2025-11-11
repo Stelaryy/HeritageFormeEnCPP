@@ -4,6 +4,8 @@
 #include "Carre.h"
 #include "Ellipse.h"
 #include "Cercle.h"
+#include "Losange.h"
+
 using namespace std;
 
 int main()
@@ -14,6 +16,7 @@ int main()
     Carre MonCarre(1.0);
     Ellipse MonEllipse(1.0, 1.0);
     Cercle MonCercle(1.0);
+    Losange MonLosange; 
 
     cout << "------------------------- Instanciation du Rectangle --------------------------" << endl;
     MonRectangle.SaisirDimension();
@@ -39,9 +42,38 @@ int main()
     double rayon;
     cout << "Entrez le rayon : ";
     cin >> rayon;
-    MonCercle = Cercle(rayon); // on crée un nouveau cercle avec ce rayon
+    MonCercle = Cercle(rayon);
     cout << "Surface: " << MonCercle.getSurface() << endl;
     cout << "Perimetre: " << MonCercle.getPerimetre() << endl << endl;
+
+    cout << "------------------------- Instanciation du Losange --------------------------" << endl;
+    int choix;
+    cout << "Voulez-vous créer le losange via : \n";
+    cout << "1. Les diagonales\n";
+    cout << "2. Le côté et l'angle\n";
+    cout << "Votre choix : ";
+    cin >> choix;
+
+    if (choix == 1) {
+        double d1, d2;
+        cout << "Entrez la première diagonale : ";
+        cin >> d1;
+        cout << "Entrez la deuxième diagonale : ";
+        cin >> d2;
+        MonLosange.SaisirDimension(d1, d2);
+    }
+    else if (choix == 2) {
+        double cote;
+        cout << "Entrez le côté : ";
+        cin >> cote;
+        MonLosange.SaisirDimension(cote);
+    }
+    else {
+        cout << "Choix invalide, utilisation du constructeur par défaut." << endl;
+    }
+
+    cout << "Surface: " << MonLosange.getSurface() << endl;
+    cout << "Perimetre: " << MonLosange.getPerimetre() << endl << endl;
 
     // Attente de la touche 'q' pour quitter
     cout << endl << "Appuyez sur 'q' puis <ENTRER> pour quitter..." << endl;
