@@ -48,23 +48,23 @@ int main()
 
     cout << "------------------------- Instanciation du Losange --------------------------" << endl;
     int choix;
-    cout << "Voulez-vous créer le losange via : \n";
+    cout << "Voulez-vous creer le losange via : \n";
     cout << "1. Les diagonales\n";
-    cout << "2. Le côté et l'angle\n";
+    cout << "2. Le cote et l'angle\n";
     cout << "Votre choix : ";
     cin >> choix;
 
     if (choix == 1) {
         double d1, d2;
-        cout << "Entrez la première diagonale : ";
+        cout << "Entrez la premiere diagonale : ";
         cin >> d1;
-        cout << "Entrez la deuxième diagonale : ";
+        cout << "Entrez la deuxieme diagonale : ";
         cin >> d2;
         MonLosange.SaisirDimension(d1, d2);
     }
     else if (choix == 2) {
         double cote;
-        cout << "Entrez le côté : ";
+        cout << "Entrez le cote : ";
         cin >> cote;
         MonLosange.SaisirDimension(cote);
     }

@@ -29,43 +29,36 @@ Losange::Losange() {
     surface = cote * cote * sin(angle);
     perimetre = 4 * cote;
 
-    cout << "Création d'un losange (côté + angle saisis)." << endl;
+    cout << "Creation d'un losange (cote + angle saisis)." << endl;
 }
 
 // Constructeur via diagonales
-Losange::Losange(double _d1, double _d2) {
-    setDiagonal1(_d1);
-    setDiagonal2(_d2);
+Losange::Losange(bool fromDiagonales) {
+    if (fromDiagonales) {
+        SaisirDiagonal1();
+        SaisirDiagonal2();
 
-    // Calcul du côté via Pythagore
-    cote = sqrt(pow(_d1 / 2, 2) + pow(_d2 / 2, 2));
+        cote = sqrt(pow(d1 / 2, 2) + pow(d2 / 2, 2));
+        surface = (d1 * d2) / 2.0;
+        perimetre = 4 * cote;
 
-    // Calcul surface et périmètre
-    surface = (_d1 * _d2) / 2.0;
-    perimetre = 4 * cote;
+        cout << "Creation d un losange via diagonales." << endl;
+    } else {
+        SaisirCote();
+        SaisirAngle();
 
-    cout << "Création d'un losange via diagonales." << endl;
-}
+        d1 = 2 * cote * sin(angle / 2);
+        d2 = 2 * cote * cos(angle / 2);
+        surface = cote * cote * sin(angle);
+        perimetre = 4 * cote;
 
-// Constructeur via côté + angle (en degrés)
-Losange::Losange(double _cote, double _angle) {
-    setCote(_cote);
-    setAngle(_angle * PI / 180.0); // conversion degrés → radians
-
-    // Calcul des diagonales
-    d1 = 2 * cote * sin(angle / 2);
-    d2 = 2 * cote * cos(angle / 2);
-
-    // Calcul surface et périmètre
-    surface = cote * cote * sin(angle);
-    perimetre = 4 * cote;
-
-    cout << "Création d'un losange via côté + angle." << endl;
+        cout << "Creation d un losange via cote + angle." << endl;
+    }
 }
 
 // Destructeur
 Losange::~Losange() {
-    cout << "Destruction d'un objet Losange." << endl;
+    cout << "Destruction d un objet Losange." << endl;
 }
 
 // -----------------------------
@@ -73,25 +66,25 @@ Losange::~Losange() {
 // -----------------------------
 void Losange::setDiagonal1(double Diagonal1) {
     if (Diagonal1 <= 0)
-        throw invalid_argument("La diagonale 1 doit être positive.");
+        throw invalid_argument("La diagonale 1 doit etre positive.");
     d1 = Diagonal1;
 }
 
 void Losange::setDiagonal2(double Diagonal2) {
     if (Diagonal2 <= 0)
-        throw invalid_argument("La diagonale 2 doit être positive.");
+        throw invalid_argument("La diagonale 2 doit etre positive.");
     d2 = Diagonal2;
 }
 
 void Losange::setCote(double _Cote) {
     if (_Cote <= 0)
-        throw invalid_argument("Le côté doit être positif.");
+        throw invalid_argument("Le cote doit etre positif.");
     cote = _Cote;
 }
 
 void Losange::setAngle(double Angle) {
     if (Angle <= 0 || Angle >= PI)
-        throw invalid_argument("L'angle doit être compris entre 0 et 180 degrés.");
+        throw invalid_argument("L angle doit etre compris entre 0 et 180 degres.");
     angle = Angle;
 }
 
@@ -100,21 +93,21 @@ void Losange::setAngle(double Angle) {
 // -----------------------------
 void Losange::SaisirDiagonal1() {
     do {
-        cout << "Entrez la première diagonale (d1 > 0) : ";
+        cout << "Entrez la premiere diagonale (d1 > 0) : ";
         cin >> d1;
     } while (d1 <= 0);
 }
 
 void Losange::SaisirDiagonal2() {
     do {
-        cout << "Entrez la deuxième diagonale (d2 > 0) : ";
+        cout << "Entrez la deuxieme diagonale (d2 > 0) : ";
         cin >> d2;
     } while (d2 <= 0);
 }
 
 void Losange::SaisirCote() {
     do {
-        cout << "Entrez la longueur du côté (c > 0) : ";
+        cout << "Entrez la longueur du cote (c > 0) : ";
         cin >> cote;
     } while (cote <= 0);
 }
@@ -122,7 +115,7 @@ void Losange::SaisirCote() {
 void Losange::SaisirAngle() {
     double deg;
     do {
-        cout << "Entrez l'angle en degrés (0 < angle < 180) : ";
+        cout << "Entrez l angle en degres (0 < angle < 180) : ";
         cin >> deg;
     } while (deg <= 0 || deg >= 180);
     angle = deg * PI / 180.0; // conversion en radians

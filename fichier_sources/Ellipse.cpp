@@ -18,12 +18,12 @@ Ellipse::Ellipse(double A, double B)
     : GrandAxe(A), PetitAxe(B)
 {
     if (A <= 0 || B <= 0)
-        throw invalid_argument("Les axes doivent être positifs.");
+        throw invalid_argument("Les axes doivent etre positifs.");
 
     CalculerSurface();
     CalculerPerimetre();
 
-    cout << "Création d'une ellipse : "
+    cout << "Creation d une ellipse : "
          << "GrandAxe = " << GrandAxe
          << ", PetitAxe = " << PetitAxe << endl;
 }
@@ -32,7 +32,7 @@ Ellipse::Ellipse(double A, double B)
 // Destructeur
 // -----------------------------
 Ellipse::~Ellipse() {
-    cout << "Destruction d'une ellipse." << endl;
+    cout << "Destruction d une ellipse." << endl;
 }
 
 // -----------------------------
@@ -70,7 +70,7 @@ void Ellipse::SaisirDimension() {
     cin >> PetitAxe;
 
     if (GrandAxe <= 0 || PetitAxe <= 0)
-        throw invalid_argument("Les axes doivent être positifs.");
+        throw invalid_argument("Les axes doivent etre positifs.");
 
     CalculerSurface();
     CalculerPerimetre();

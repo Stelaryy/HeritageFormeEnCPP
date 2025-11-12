@@ -15,13 +15,13 @@ constexpr double PI = 3.14159265358979323846;
 
 // Constructeurs
 Cercle::Cercle() : Ellipse(0, 0), rayon(0) {
-    cout << "Création d'un cercle par défaut (rayon = 0)" << endl;
+    cout << "Creation d un cercle par defaut (rayon = 0)" << endl;
 }
 
 Cercle::Cercle(double r) : Ellipse(r, r), rayon(r) {
     if (r <= 0)
-        throw invalid_argument("Le rayon doit être positif.");
-    cout << "Création d'un objet de type Cercle, rayon = " << rayon << endl;
+        throw invalid_argument("Le rayon doit etre positif.");
+    cout << "Creation d un objet de type Cercle, rayon = " << rayon << endl;
 }
 
 // Destructeur
