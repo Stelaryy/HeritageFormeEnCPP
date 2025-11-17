@@ -1,6 +1,6 @@
 // Auteur : Ahmed Boukra Bettayeb
 // Version : 3.0
-// Date : 04/11/2025
+// Date : 16/11/2025
 // Classe Carre - Implementation
 
 //#include "stdafx.h"
@@ -10,16 +10,30 @@ using namespace std;
 
 // Constructeur
 Carre::Carre() : Rectangle(0.0, 0.0){
-   this->SaisirDimension();
+   	incrementerCompteur();       // Compteur Carre
+	forme::incrementerFormes();  // Compteur global
+	cout << "Creation d'un Carre. Compteur: " << compteurCarre
+    << ", total formes: " << forme::compteurFormes << endl;
+	
+	this->SaisirDimension();
 }
 
 Carre::Carre(double mCote) : Rectangle(mCote, mCote){
-   this->cote = mCote;
+   	incrementerCompteur();       // Compteur Carre
+	forme::incrementerFormes();  // Compteur global
+	cout << "Creation d'un Carre. Compteur: " << compteurCarre
+    << ", total formes: " << forme::compteurFormes << endl;
+
+	this->cote = mCote;
 }
 
 //destructeur
 Carre::~Carre() {
-    cout << " Destruction d'un objet de type Carre " << endl;
+    decrementerCompteur();
+	forme::decrementerFormes();
+	cout << "Suppression d'un Carre. Restants: " << compteurCarre
+     << ", total formes: " << forme::compteurFormes << endl;
+
 }
 void Carre::SaisirDimension()
 {

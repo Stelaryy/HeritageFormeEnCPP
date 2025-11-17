@@ -1,6 +1,6 @@
 ﻿// Auteur : Ahmed Boukra Bettayeb
-// Version : 3.2
-// Date : 08/11/2025
+// Version : 3.0
+// Date : 16/11/2025
 // Classe Ellipse - Implémentation
 
 #include "ellipse.h"

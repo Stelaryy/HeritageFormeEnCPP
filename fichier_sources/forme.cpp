@@ -1,3 +1,7 @@
+// Auteur : Ahmed Boukra Bettayeb
+// Version : 3.0
+// Date : 16/11/2025
+
 #include "stdafx.h"
 #include "forme.h"
 forme::forme(){

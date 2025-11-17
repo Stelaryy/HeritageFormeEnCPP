@@ -1,6 +1,6 @@
 // Auteur : Ahmed Boukra Bettayeb
-// Version : 2.1
-// Date : 14/10/2025
+// Version : 3.0
+// Date : 16/11/2025
 // Classe HexagoneIrregulier - Déclaration
 
 #ifndef DEF_HEXAGONEIRREGULIER

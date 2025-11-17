@@ -1,6 +1,6 @@
 // Auteur : Ahmed Boukra Bettayeb
-// Version : 2.0
-// Date : 14/10/2025
+// Version : 3.0
+// Date : 16/11/2025
 // Classe Carre - Declaration
 #ifndef DEF_CARRE
 #define DEF_CARRE
@@ -14,6 +14,7 @@ class Carre : public Rectangle  {
 private:
     //variable
     double cote;
+    static int compteurCarre;
 
 public:
     // Constructeur
@@ -22,6 +23,9 @@ public:
     ~Carre();
     void SaisirDimension() override;
     void SaisirDimension(double _dim1) override;
+    static int getCompteurCarre();
+    static void incrementerCompteur();
+    static void decrementerCompteur();
     
 };
 #endif

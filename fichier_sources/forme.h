@@ -1,7 +1,18 @@
+// Auteur : Ahmed Boukra Bettayeb
+// Version : 3.0
+// Date : 16/11/2025
+
 #pragma once   // ou bien #ifndef FORME_H ... #define FORME_H ... #endif
 
 class forme {
 public:
+    static int compteurFormes;
+
+    static void incrementerFormes() { compteurFormes++; }
+    static void decrementerFormes() { compteurFormes--; }
+
+    forme() { incrementerFormes(); }
+    virtual ~forme() { decrementerFormes(); }
     virtual ~forme() = default;
     forme();
 

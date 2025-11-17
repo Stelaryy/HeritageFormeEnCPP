@@ -1,6 +1,6 @@
-//	Auteur : Wilfrid Grassi
-//	Version : 1.1
-//	Date 13/09/2016
+// Auteur : Ahmed Boukra Bettayeb
+// Version : 3.0
+// Date : 16/11/2025
 //	Objet : Definition des methodes de la classe Rectangle 
 //			Calcul de Perimetre et de surface
 //			Instanciation statique des objets (pas de pointeurs)
@@ -9,15 +9,29 @@
 #include "Rectangle.h"
 using namespace std;
 
+int Rectangle::compteur = 0;
+int Rectangle::decrementer = 0;
+
+
 Rectangle::Rectangle(double Long, double Large)
 {
+	incrementerCompteur();      //il manque ça
+    forme::incrementerFormes(); //compteur global
+
 	this->setLongueur(Long);
 	this->setLargeur(Large);
+
+	cout << "Creation d'un Rectangle. Compteur : " << compteur 
+         << ", total formes : " << forme::compteurFormes << endl;
 }
 
 Rectangle::~Rectangle()
 {
-	cout << "Suppression de la memoire d un objet Rectangle ..." << endl;
+	decrementerCompteur();       //décrémentation
+    forme::decrementerFormes();  //compteur global
+
+    cout << "Suppression d'un Rectangle. Restants : " << compteur 
+         << ", total formes : " << forme::compteurFormes << endl;
 }
 
 void Rectangle::setLongueur(double Long)
