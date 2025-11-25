@@ -4,8 +4,14 @@
 
 #include "stdafx.h"
 #include "forme.h"
+int forme::compteurFormes = 0; // define the static counter
+
 forme::forme(){
-    
+    incrementerFormes();
+}
+
+forme::~forme(){
+    decrementerFormes();
 }
 
 double forme::getSurface() const{

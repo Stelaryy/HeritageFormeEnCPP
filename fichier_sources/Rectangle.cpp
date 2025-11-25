@@ -9,12 +9,17 @@
 #include "Rectangle.h"
 using namespace std;
 
+// Definition du compteur statique et des methodes utilitaires
 int Rectangle::compteur = 0;
 int Rectangle::decrementer = 0;
-
+void Rectangle::incrementerCompteur(){ compteur++; }
+void Rectangle::decrementerCompteur(){ if (compteur>0) compteur--; }
+int Rectangle::getCompteurRectangle(){ return compteur; }
 
 Rectangle::Rectangle(double Long, double Large)
 {
+	// ensure per-class counters are available
+	// (static compteur and helpers are defined below)
 	incrementerCompteur();      //il manque ça
     forme::incrementerFormes(); //compteur global
 

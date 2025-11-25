@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <memory> // pour smart pointers
+#include "GestionFormes.h"
 #include "forme.h"
 #include "Rectangle.h"
 #include "Carre.h"

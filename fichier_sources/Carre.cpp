@@ -8,6 +8,12 @@
 #include <iostream>
 using namespace std;
 
+// Definition du compteur statique et des methodes utilitaires
+int Carre::compteurCarre = 0;
+void Carre::incrementerCompteur() { compteurCarre++; }
+void Carre::decrementerCompteur() { if (compteurCarre>0) compteurCarre--; }
+int Carre::getCompteurCarre() { return compteurCarre; }
+
 // Constructeur
 Carre::Carre() : Rectangle(0.0, 0.0){
    	incrementerCompteur();       // Compteur Carre

@@ -9,12 +9,11 @@ public:
     static int compteurFormes;
 
     static void incrementerFormes() { compteurFormes++; }
-    static void decrementerFormes() { compteurFormes--; }
+    static void decrementerFormes() { if (compteurFormes>0) compteurFormes--; }
 
-    forme() { incrementerFormes(); }
-    virtual ~forme() { decrementerFormes(); }
-    virtual ~forme() = default;
+    // ctor/dtor declared here and defined in forme.cpp
     forme();
+    virtual ~forme();
 
     virtual double getSurface() const = 0;
     virtual double getPerimetre() const = 0;
